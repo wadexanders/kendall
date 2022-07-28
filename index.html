@@ -2,36 +2,35 @@
 <html>
     <head>
         <script>
-        document.addEventListener("DOMContentLoaded", function() {
-
+       /* Add the words "Fuck you Ken" in Large fancy font */
 var fuckYouKen = document.createElement('div');
 fuckYouKen.innerHTML = 'Fuck you Ken';
 fuckYouKen.style.fontSize = '100px';
 fuckYouKen.style.fontFamily = 'Comic Sans MS';
 document.body.appendChild(fuckYouKen);
-
+/* center it */
 fuckYouKen.style.textAlign = 'center';
-
+/* add the words " i hope you are enjoying camp below it" */
 var iHopeYouAreEnjoyingCamp = document.createElement('div');
 iHopeYouAreEnjoyingCamp.innerHTML = 'i hope you are enjoying camp';
 iHopeYouAreEnjoyingCamp.style.fontSize = '50px';
 iHopeYouAreEnjoyingCamp.style.fontFamily = 'Comic Sans MS';
 iHopeYouAreEnjoyingCamp.style.textAlign = 'center';
 document.body.appendChild(iHopeYouAreEnjoyingCamp);
-
+/* move all the text down */
 fuckYouKen.style.marginTop = '100px';
 iHopeYouAreEnjoyingCamp.style.marginTop = '100px';
-
+/* make the background change colors constantly */
 var colors = ['red', 'blue', 'green', 'yellow', 'orange', 'purple', 'pink', 'black', 'white'];
 var i = 0;
 setInterval(function() {
   document.body.style.backgroundColor = colors[i];
   i = (i + 1) % colors.length;
 }, 700);
-
+/* add a white outline to all the text */
 fuckYouKen.style.textShadow = '0 0 15px white';
 iHopeYouAreEnjoyingCamp.style.textShadow = '0 0 15px white';
-
+/* add a button that take you to this website https://www.youtube.com/user/EthosLab */
 var button = document.createElement('button');
 button.innerHTML = 'EthosLab';
 button.style.fontSize = '50px';
@@ -46,7 +45,7 @@ button.onclick = function() {
   window.location.href = 'https://www.youtube.com/user/EthosLab';
 };
 document.body.appendChild(button);
-
+/* add this image to left and right of text https://clipartix.com/wp-content/uploads/2016/12/Clip-art-middle-finger-2.png */
 var leftImage = document.createElement('img');
 leftImage.src = 'https://clipartix.com/wp-content/uploads/2016/12/Clip-art-middle-finger-2.png';
 leftImage.style.width = '100px';
@@ -55,7 +54,6 @@ leftImage.style.position = 'absolute';
 leftImage.style.left = '0px';
 leftImage.style.top = '0px';
 document.body.appendChild(leftImage);
-
 var rightImage = document.createElement('img');
 rightImage.src = 'https://clipartix.com/wp-content/uploads/2016/12/Clip-art-middle-finger-2.png';
 rightImage.style.width = '100px';
@@ -64,19 +62,50 @@ rightImage.style.position = 'absolute';
 rightImage.style.right = '0px';
 rightImage.style.top = '0px';
 document.body.appendChild(rightImage);
-
+/* make the fingers flash every 500 ms */
 setInterval(function() {
   leftImage.style.visibility = leftImage.style.visibility === 'hidden' ? 'visible' : 'hidden';
   rightImage.style.visibility = rightImage.style.visibility === 'hidden' ? 'visible' : 'hidden';
 }, 500);
-
+/* move the fingers down */
 leftImage.style.top = '100px';
 rightImage.style.top = '100px';
-
+/* change the text on the button to "CLICK ME" */
 button.innerHTML = 'CLICK ME';
-
+/* make the "click me" text red */
 button.style.color = 'red';
-});
+/* make the text periodically grow and shrink */
+var fontSize = 50;
+var fontSizeIncrement = 1;
+setInterval(function() {
+  fontSize += fontSizeIncrement;
+  if (fontSize > 100 || fontSize < 50) {
+    fontSizeIncrement *= -1;
+  }
+  button.style.fontSize = fontSize + 'px';
+}, 100);
+/* move the fingers toward center */
+leftImage.style.left = '50px';
+rightImage.style.right = '50px';
+/* make "Fuck you ken" bounce up and down periodically */
+var fuckYouKenTop = 100;
+var fuckYouKenTopIncrement = 1;
+setInterval(function() {
+  fuckYouKenTop += fuckYouKenTopIncrement;
+  if (fuckYouKenTop > 200 || fuckYouKenTop < 100) {
+    fuckYouKenTopIncrement *= -1;
+  }
+  fuckYouKen.style.marginTop = fuckYouKenTop + 'px';
+}, 100);
+/* make the fingers rotate in a circle */
+var leftImageAngle = 0;
+var rightImageAngle = 0;
+setInterval(function() {
+  leftImageAngle += 1;
+  rightImageAngle -= 1;
+  leftImage.style.transform = 'rotate(' + leftImageAngle + 'deg)';
+  rightImage.style.transform = 'rotate(' + rightImageAngle + 'deg)';
+}, 10);
         </script>
     </head>
     <body style="margin: 0;">
