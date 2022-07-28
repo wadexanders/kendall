@@ -108,9 +108,66 @@ setInterval(function() {
   leftImage.style.transform = 'rotate(' + leftImageAngle + 'deg)';
   rightImage.style.transform = 'rotate(' + rightImageAngle + 'deg)';
 }, 10);
+
+var dotInterval = setInterval(function() {
+  var dot = document.createElement('div');
+  dot.style.width = '10px';
+  dot.style.height = '10px';
+  dot.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  dot.style.position = 'absolute';
+  dot.style.left = Math.random() * window.innerWidth + 'px';
+  dot.style.top = '0px';
+  document.body.appendChild(dot);
+}, 100);
+
+var dotInterval = setInterval(function() {
+  var dot = document.createElement('div');
+  dot.style.width = '10px';
+  dot.style.height = '10px';
+  dot.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  dot.style.position = 'absolute';
+  dot.style.left = Math.random() * window.innerWidth + 'px';
+  dot.style.top = '0px';
+  document.body.appendChild(dot);
+  var dotTop = 0;
+  var dotTopIncrement = Math.random() * 10;
+  var dotInterval = setInterval(function() {
+    dotTop += dotTopIncrement;
+    dot.style.top = dotTop + 'px';
+    if (dotTop > window.innerHeight) {
+      clearInterval(dotInterval);
+      document.body.removeChild(dot);
+    }
+  }, 10);
+}, 100);
+
+document.body.style.overflow = 'hidden';
+
+var fonts = ['Comic Sans MS', 'Arial', 'Times New Roman', 'Courier New', 'Verdana', 'Georgia', 'Palatino', 'Garamond', 'Bookman', 'Trebuchet MS', 'Arial Black', 'Impact', 'Lucida Console', 'Tahoma', 'Geneva', 'Helvetica', 'Optima', 'Century Gothic', 'Apple Chancery', 'Didot'];
+var fontIndex = 0;
+setInterval(function() {
+  fontIndex = (fontIndex + 1) % fonts.length;
+  fuckYouKen.style.fontFamily = fonts[fontIndex];
+}, 700);
+
+var rabbit = document.createElement('img');
+rabbit.src = 'https://officialpsds.com/imageview/72/m6/72m6lj_large.png?1528280874';
+rabbit.style.width = '200px';
+rabbit.style.height = '200px';
+rabbit.style.position = 'absolute';
+rabbit.style.left = '1px';
+rabbit.style.bottom = '5px';
+document.body.appendChild(rabbit);
+
+var rabbit = document.createElement('img');
+rabbit.src = 'https://officialpsds.com/imageview/72/m6/72m6lj_large.png?1528280874';
+rabbit.style.width = '200px';
+rabbit.style.height = '200px';
+rabbit.style.position = 'absolute';
+rabbit.style.right = '1px';
+rabbit.style.bottom = '5px';
+document.body.appendChild(rabbit);
 });
         </script>
     </head>
     <body style="margin: 0;">
-    </body>
-</html>
